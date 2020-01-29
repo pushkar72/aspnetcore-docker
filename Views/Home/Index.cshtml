@@ -1,4 +1,7 @@
-﻿@{
+﻿@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+@{
     ViewData["Title"] = "Home Page";
 }
-<h1>Welcome to DevOps Session</h1>
+<h1>@Configuration.GetSection("WelcomeMessage").Value</h1>
